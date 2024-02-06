@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('products', function(){
+    return Product::get();
+});
+
+Route::get('product-create', function(){
+    return Product::create([
+        'name' => 'man pants two',
+        'description' => 'man pants style desc',
+        'small_description' => 'man pants style small desc',
+        'original_price' => 599,
+        'price' => 459,
+        'stock' => 40,
+        'is_active' => 1,
+    ]);
+});
 
 Route::get('/', function () {
     return view('frontend.index');
