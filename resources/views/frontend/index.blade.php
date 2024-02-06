@@ -7,24 +7,17 @@
     <div class="py-5">
         <div class="container">
 
-            @php
-                $succesMessage = "saved succesfully";
-                $type = "danger";
-            @endphp
-
-            <x-alert-message :type="$type" :message="$succesMessage"/>
+            <h4 class="text-center">Welcome to LARAVEL</h4>
 
             <hr>
 
-            <h4>Welcome to LARAVEL</h4>
-
-            <hr>
-
-            <x-form.label value="My First Name"/>
+            <h4 class="text-center">Everything about Migration | Laravel 10 materials</h4>
+            {{-- <x-form.label value="My First Name"/>
 
             <x-form.label>
                 My name
-            </x-form.label>
+            </x-form.label> --}}
+
 
         </div>
     </div>
