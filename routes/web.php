@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -19,17 +20,11 @@ Route::get('products', function(){
     return Product::get();
 });
 
-Route::get('product-create', function(){
-    return Product::create([
-        'name' => 'man pants two',
-        'description' => 'man pants style desc',
-        'small_description' => 'man pants style small desc',
-        'original_price' => 599,
-        'price' => 459,
-        'stock' => 40,
-        'is_active' => 1,
-    ]);
-});
+Route::get('products/create', [App\Http\Controllers\ProductController::class, 'create']);
+Route::post('products/create', [App\Http\Controllers\ProductController::class, 'store']);
+
+
+
 
 Route::get('/', function () {
     return view('frontend.index');
