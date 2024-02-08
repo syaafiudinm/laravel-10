@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -37,7 +38,60 @@ class ProductController extends Controller
 
         // ]);
 
-        Product::create($request->all());
+        // Product::create($request->all());
+
+        // $product = new Product([
+
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+
+        // ]);
+
+        // $product->save();
+
+        // $product = new Product();
+
+        // $product->fill([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+        // ]);
+
+        // $product->save();
+
+        // DB::table('products')->insert([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+        // ]);
+
+        // Product::insert([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+        // ]);
+
+        $product = Product::firstOrCreate
+        ([
+            'name' => $request->name,
+        ],
+        [
+            'description' => $request->description,
+            'price' => $request->price,
+            'stock' => $request->stock, 
+            'is_active' => $request->is_active == true ? 1 : 0,
+        ]);
+        
+        
 
         return redirect('products/create')->with('status', 'product added');
 

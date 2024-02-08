@@ -20,7 +20,7 @@ class Product extends Model
         'original_price',
         'price',
         'stock',
-        'is_active'
+        'is_active',
     ];
 
     protected $casts = [
