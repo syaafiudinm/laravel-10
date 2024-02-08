@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductFormRequest;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,6 +17,30 @@ class ProductController extends Controller
 
     public function store(ProductFormRequest $request){
         $request->validated();
+
+
+        // $product = new Product();
+        // $product->name = $request->name;
+        // $product->description = $request->description;
+        // $product->price = $request->price;
+        // $product->stock = $request->stock; 
+        // $product->is_active = $request->is_active == true ? 1 : 0; 
+        // $product->save();
+        
+        // Product::create([
+
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+
+        // ]);
+
+        Product::create($request->all());
+
+        return redirect('products/create')->with('status', 'product added');
+
     }
 
 

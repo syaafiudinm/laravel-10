@@ -24,8 +24,8 @@ class Product extends Model
     ];
 
     protected $casts = [
-        'start_date' => 'date',
-        'end_date' => 'datetime:Y-m-d',
+        // 'start_date' => 'date',
+        // 'end_date' => 'datetime:Y-m-d',
         'is_active' => 'boolean'
     ];
 

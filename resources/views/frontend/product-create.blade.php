@@ -10,6 +10,11 @@
 
             <div class="row justify-content-ceter">
                 <div class="col md-6">
+
+                    @if (session('status'))
+                        <div class="alert alert-success">{{session('status')}}</div>
+                    @endif
+
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3">
