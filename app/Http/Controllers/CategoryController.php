@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        return view('categories.index');
+        $categories = Category::get();
+        return view('categories.index', compact('categories'));
     }
 
     public function create(){

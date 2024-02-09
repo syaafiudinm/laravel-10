@@ -10,9 +10,36 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <x-slot name="title">
-                            Categories
-                        </x-slot>
+                       <table class="table table-border table-striped">
+                         <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>is Active</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            @foreach ($categories as $item)
+                                <tr>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->description}}</td>
+                                    <td>
+                                        @if ($item->is_active)
+                                            Active
+                                        @else
+                                            In-Active
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href="">Edit</a>
+                                        <a href="">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                         </tbody>
+                       </table>
                     </div>
                 </div>
             </div>
