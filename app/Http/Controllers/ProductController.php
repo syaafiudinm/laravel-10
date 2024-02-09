@@ -80,17 +80,27 @@ class ProductController extends Controller
         //     'is_active' => $request->is_active == true ? 1 : 0,
         // ]);
 
-        $product = Product::firstOrCreate
-        ([
-            'name' => $request->name,
-        ],
-        [
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock, 
-            'is_active' => $request->is_active == true ? 1 : 0,
-        ]);
-        
+        // $product = Product::firstOrCreate
+        // ([
+        //     'name' => $request->name,
+        // ],
+        // [
+        //     'description' => $request->description,
+        //     'price' => $request->price,
+        //     'stock' => $request->stock, 
+        //     'is_active' => $request->is_active == true ? 1 : 0,
+        // ]);
+
+        $product = Product::updateOrCreate
+            ([
+                'name' => $request->name,
+            ],
+            [
+                'description' => $request->description,
+                'price' => $request->price,
+                'stock' => $request->stock, 
+                'is_active' => $request->is_active == true ? 1 : 0,
+            ]);
         
 
         return redirect('products/create')->with('status', 'product added');
