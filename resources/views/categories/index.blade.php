@@ -33,8 +33,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="">Edit</a>
-                                        <a href="">Delete</a>
+                                        <a href="{{url('categories/'.$item->id.'/edit')}}" class="btn btn-success mx-2">Edit</a>
+                                        <a href="{{url('categories/'.$item->id.'/delete')}}" class="btn btn-danger" onclick="return confirm('Are ou sure want to delete category?');">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
