@@ -15,6 +15,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('categories')}}">Product</a>
+          </li>
         </ul>
       </div>
     </div>

@@ -21,20 +21,7 @@ class ProductFormRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => ['required','min:3','max:255','string'],
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'stock' => 'required|numeric',
-            'is_active' => 'sometimes',
-        ];
+        return [];
     }
 
-    public function messages(): array
-{
-    return [
-                'name.required' => 'product name cannot be empty',
-                'name.min' => 'give atleast 3 character for product name'
-            ];
-}
 }

@@ -8,16 +8,35 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-
 class ProductController extends Controller
 {
+    public function index(){
+        $products = Product::get();
+        return view('product.index', compact('products'));
+    }
     public function create(){
-        return view('frontend.product-create');
+        return view('product.create');
     }
 
 
-    public function store(ProductFormRequest $request){
-        $request->validated();
+    public function store(Request $request){
+        $request->validate([
+            'name' => ['required','min:3','max:255','string'],
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'is_active' => 'sometimes',
+        ]);
+
+        Product::create([
+            'name' =>  $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'is_active' => $request->is_active == true ? 1:0,
+        ]);
+
+        return redirect('products/create')->with('status', 'product added');
 
 
         // $product = new Product();
@@ -91,19 +110,6 @@ class ProductController extends Controller
         //     'is_active' => $request->is_active == true ? 1 : 0,
         // ]);
 
-        $product = Product::updateOrCreate
-            ([
-                'name' => $request->name,
-            ],
-            [
-                'description' => $request->description,
-                'price' => $request->price,
-                'stock' => $request->stock, 
-                'is_active' => $request->is_active == true ? 1 : 0,
-            ]);
-        
-
-        return redirect('products/create')->with('status', 'product added');
 
     }
 

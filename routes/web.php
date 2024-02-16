@@ -23,10 +23,7 @@ Route::get('categories/{id}/edit', [App\Http\Controllers\CategoryController::cla
 Route::put('categories/{id}/edit', [App\Http\Controllers\CategoryController::class, 'update']);
 Route::get('categories/{id}/delete', [App\Http\Controllers\CategoryController::class, 'destroy']);
 
-Route::get('products', function(){
-    return Product::get();
-});
-
+Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
 Route::get('products/create', [App\Http\Controllers\ProductController::class, 'create']);
 Route::post('products/create', [App\Http\Controllers\ProductController::class, 'store']);
 
