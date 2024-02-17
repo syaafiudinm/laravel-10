@@ -10,13 +10,15 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                       <table class="table table-border table-striped">
+                       <table class="table table-bordered table-striped">
                          <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Description</th>
+                                <th>Image</th>
                                 <th>is Active</th>
+                                <th>Action</th>
                             </tr>
                          </thead>
                          <tbody>
@@ -25,6 +27,9 @@
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->description}}</td>
+                                    <td>
+                                        <img src="{{ asset($item->image) }}" alt="img" style="width: 70px; height: 70px;">
+                                    </td>
                                     <td>
                                         @if ($item->is_active)
                                             Active

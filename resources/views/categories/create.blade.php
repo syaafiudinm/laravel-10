@@ -19,7 +19,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('categories/create') }}" method="POST">
+                        <form action="{{ url('categories/create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3">
@@ -43,6 +43,10 @@
                                 @error('is_active')
                                 <span class="text text-danger">{{$message}}</span>
                                 @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Upload File/img</label>
+                                <input type="file" name="image" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary">Save</button>
