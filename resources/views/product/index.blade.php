@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Products
-                            <a href="{{url('categories/create')}}" class="btn btn-primary float-end">Add Product</a>
+                            <a href="{{url('products/create')}}" class="btn btn-primary float-end">Add Product</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -30,15 +30,15 @@
                                     <td>{{$product->price}}</td>
                                     <td>{{$product->stock}}</td>
                                     <td>
-                                        @if ($item->is_active)
+                                        @if ($product->is_active)
                                             Active
                                         @else
                                             In-Active
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{url('categories/'.$item->id.'/edit')}}" class="btn btn-success mx-2">Edit</a>
-                                        <a href="{{url('categories/'.$item->id.'/delete')}}" class="btn btn-danger" onclick="return confirm('Are ou sure want to delete category?');">Delete</a>
+                                        <a href="{{url('products/'.$product->id.'/edit')}}" class="btn btn-success mx-2">Edit</a>
+                                        <a href="{{url('products/'.$product->id.'/delete')}}" class="btn btn-danger" onclick="return confirm('Are ou sure want to delete product?');">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

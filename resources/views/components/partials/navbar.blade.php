@@ -16,7 +16,10 @@
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('categories')}}">Product</a>
+            <a class="nav-link" href="{{url('products')}}">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('categories')}}">categories</a>
           </li>
         </ul>
       </div>
