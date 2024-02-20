@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="">Product Name</label>
-                                <input type="text" name="name" value="{{old('name')}}" class="form-control" />
+                                <input type="text" name="name" value="{{old('name')}}" class="form-control" autocomplete="off" />
                                 @error('name') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">
@@ -34,12 +34,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="">Product Price</label>
-                                <input type="text" name="price" class="form-control" />
+                                <input type="text" name="price" class="form-control" autocomplete="off" />
                                 @error('price') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="">Product Stock</label>
-                                <input type="text" name="stock" class="form-control" />
+                                <input type="text" name="stock" class="form-control" autocomplete="off"/>
                                 @error('stock') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">

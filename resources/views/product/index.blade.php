@@ -13,18 +13,20 @@
                        <table class="table table-border table-striped">
                          <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>NO.</th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
                                 <th>Stock</th>
                                 <th>is Active</th>
+                                <th>add/view images</th>
+                                <th>Action</th>
                             </tr>
                          </thead>
                          <tbody>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td>{{$product->id}}</td>
+                                    <td>{{$loop->iteration}}</td>
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->description}}</td>
                                     <td>{{$product->price}}</td>
@@ -35,6 +37,9 @@
                                         @else
                                             In-Active
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{url('products/'.$product->id.'/upload')}}" class="btn btn-info">add/view images</a>
                                     </td>
                                     <td>
                                         <a href="{{url('products/'.$product->id.'/edit')}}" class="btn btn-success mx-2">Edit</a>

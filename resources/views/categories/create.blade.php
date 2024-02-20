@@ -24,7 +24,7 @@
 
                             <div class="mb-3">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="name" value="{{old('name')}}">
+                                <input type="text" class="form-control" name="name" value="{{old('name')}}" autocomplete="off">
                                 @error('name')
                                     <span class="text text-danger">{{$message}}</span>
                                 @enderror
