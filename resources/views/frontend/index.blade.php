@@ -8,7 +8,6 @@
         <div class="container">
 
             <h4 class="text-center">Welcome to LARAVEL</h4>
-
             <hr>
 
             <h4 class="text-center">Everything about Migration | Laravel 10 materials</h4>

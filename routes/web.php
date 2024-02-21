@@ -30,7 +30,9 @@ Route::get('products/{id}/edit', [App\Http\Controllers\ProductController::class,
 Route::put('products/{id}/edit', [App\Http\Controllers\ProductController::class, 'update']);
 Route::get('products/{id}/delete', [App\Http\Controllers\ProductController::class, 'destroy']);
 
-Route::get('products/{id}/upload', [App\Http\Controllers\ProductImageController::class, 'index']);
+Route::get('products/{productId}/upload', [App\Http\Controllers\ProductImageController::class, 'index']);
+Route::post('products/{productId}/upload', [App\Http\Controllers\ProductImageController::class, 'store']);
+Route::get('product-image/{productImageId}/delete', [App\Http\Controllers\ProductImageController::class, 'destroy']);
 
 Route::get('/', function () {
     return view('frontend.index');
