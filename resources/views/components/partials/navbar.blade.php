@@ -21,6 +21,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{url('categories')}}">categories</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('gallery')}}">gallery</a>
+          </li>
         </ul>
       </div>
     </div>
