@@ -44,7 +44,13 @@ class ProductImageController extends Controller
 
         ProductImage::insert($imageData);
 
-        return redirect()->back()->with('status', 'Uploaded Successfully');
+        if($imageData == true){
+            return redirect()->back()->with('status', 'Uploaded Successfully');
+        }else{
+            return redirect()->back()->with('failed', 'Uploaded failed');
+        }
+
+        
     }
 
     public function destroy(int $productImageId){

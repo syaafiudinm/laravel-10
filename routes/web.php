@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'index']);
+Route::get('gallery/upload', [App\Http\Controllers\GalleryController::class, 'create']);
+Route::post('gallery/upload', [App\Http\Controllers\GalleryController::class, 'store']);
+Route::get('gallery/{galleryId}/delete', [App\Http\Controllers\GalleryController::class, 'destroy']);
+
 Route::get('categories', [App\Http\Controllers\CategoryController::class, 'index']);
 Route::get('categories/create',[App\Http\Controllers\CategoryController::class, 'create']);
 Route::post('categories/create',[App\Http\Controllers\CategoryController::class, 'store']); 

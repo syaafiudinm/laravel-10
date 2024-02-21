@@ -21,6 +21,12 @@
                             </div>
                         @endif
 
+                        @if (session('failed'))
+                            <div class="alert alert-danger">
+                                {{session('failed')}}
+                            </div>
+                        @endif
+
                         <h5>Product Name : {{$product->name}} </h5>
                         <hr>
 
