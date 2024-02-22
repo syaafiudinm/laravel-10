@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('generate-Pdf', [App\Http\Controllers\PdfController::class, 'generatePdf']);
+
 Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'index']);
 Route::get('gallery/upload', [App\Http\Controllers\GalleryController::class, 'create']);
 Route::post('gallery/upload', [App\Http\Controllers\GalleryController::class, 'store']);
